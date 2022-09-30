@@ -21,6 +21,8 @@ padding: 0;
 }
 header {
 display: inline-block;
+margin-left: 275px;
+margin-right: 275px;
 }
 
 .container {
@@ -69,7 +71,7 @@ margin: 0 auto;
 </head>
 <body>
 <form action="search" method="get">
-  <div class="header">
+  <div class="header" style="margin-left: 275px; margin-right: 275px;">
     <div id="container">
       <div class="container-left clearfix">
         <div class="logo">

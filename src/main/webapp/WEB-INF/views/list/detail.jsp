@@ -29,10 +29,11 @@ a {
 <title>Insert title here</title>
 </head>
 <body>
+<form action="buy" method="get">
 <c:forEach items="${list }" var="aa">
 <input type = "hidden" name = "pcode" value = "${aa.pcode }">
 <table width = "800" height = "1000">
-  
+ 
     <tr>
       <td rowspan="5" width = "500" id="img"><img src="${pageContext.request.contextPath }/image/${aa.pthumbnail }" width="500" height="700"/>
       </td><td>${aa.pname }</td>
@@ -52,7 +53,7 @@ a {
     
     <tr>
       <td>
-        <select id="testSelect">
+        <select id="testSelect" name = "bb">
            <option value="10">10팩 ${aa.price*10 }원</option>
            <option value="30">30팩 ${aa.price*30 }원</option>
            <option value="50">50팩 ${aa.price*50 }원</option>
@@ -62,10 +63,11 @@ a {
     </tr> 
      
     <tr>
-      <td colspan="2" id="td"><a href="#"><h2>장바구니</h2></a><a href="#"><h2>바로구매</h2></a></td>
+      <td colspan="2" id="td"><a href="#"><h2>장바구니</h2></a><input type="submit" value="바로구매"></td>
     </tr>    
 
 </table>
 </c:forEach>  
+</form>
 </body>
 </html>

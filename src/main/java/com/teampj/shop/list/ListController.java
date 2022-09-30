@@ -164,4 +164,35 @@ public class ListController {
 		mav.setViewName("listdetail");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/buy", method = RequestMethod.GET)
+	public ModelAndView buy(Model model, HttpServletRequest request) {
+		
+		String pcode = request.getParameter("pcode");
+		int bb = Integer.parseInt(request.getParameter("bb"));
+		
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.buy(pcode);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("bb", bb);
+		
+		mav.setViewName("listbuy");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/buysave", method = RequestMethod.GET)
+	public ModelAndView buysave(Model model, HttpServletRequest request) {
+		
+		String pcode = request.getParameter("pcode");
+		String scode = request.getParameter("scode");
+		String omethod = request.getParameter("omethod");
+		int bb = Integer.parseInt(request.getParameter("bb"));
+		
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ls.buysave(scode, pcode, bb, omethod);
+		
+		mav.setViewName("redirect:main");
+		return mav;
+	}
 }

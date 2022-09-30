@@ -59,6 +59,9 @@
 	<definition name="listsalad" extends="baseLayout">
 		<put-attribute name="body" value="/WEB-INF/views/list/salad.jsp" />
 	</definition>
+	<definition name="listbuy" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/buy.jsp" />
+	</definition>
 	
 <!-- ORDER -->
 	<definition name="ordermain" extends="baseLayout">

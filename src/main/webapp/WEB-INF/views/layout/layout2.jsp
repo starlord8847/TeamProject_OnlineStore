@@ -34,12 +34,15 @@ html, body{
 }
 .topnav{
   grid-area: topnav;
+  position:-webkit-sticky;
+  position:sticky; top:0px; z-index:100;
 }
 .lside{
   grid-area: lside;
 }
 .imgmain{
   grid-area: imgmain;
+  
 }
 .main{
   grid-area: main;
@@ -50,6 +53,10 @@ html, body{
 .footer {  
   grid-area: footer;
   background: #ccc;
+}
+.carousel-inner{
+  border-style: solid;
+  border-width: 1px;
 }
 </style>
 </head>

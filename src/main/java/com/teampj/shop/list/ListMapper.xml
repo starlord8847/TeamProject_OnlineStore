@@ -88,7 +88,16 @@
     where pmaincate = 'Rice'
   </select>
   
+  <select id="buy" resultMap="dto">
+    select *
+    from listdb
+    where pcode = #{param1}
+  </select>
   
+  <insert id="buysave">
+    insert into orderdb(ocode, ucode, scode, pcode, ocount, oaddress, omethod)
+    values('O'||LPAD(SEQ_orderDB.nextval,5,0), 'U00001', #{param1}, #{param2}, #{param3}, '서울시', #{param4})
+  </insert>
   
  
   

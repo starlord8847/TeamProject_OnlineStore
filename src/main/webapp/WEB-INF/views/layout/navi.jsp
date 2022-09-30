@@ -24,31 +24,45 @@ menu박스 가운데정렬, 글자가운데 정렬 */
 	#menu {
 		font:bold 16px "malgun gothic";
 		height:50px;
-		background: #ccc;
+		background: #fff;
 		color:black;
 		line-height: 50px; 
-		margin:0 auto;
 		text-align: center;
-		position:relative;z-index:2
+		position:-webkit-sticky;
+		position:sticky; top:-5px; z-index:100;
+	}
+	#menu> ul > li:hover{
+	    background: black;
+	    color: #fff;
+	}
+	#menu> ul > li:hover > ul{
+	    color: black;
 	}
 /* menu태그 자식의 ul의 자식 li를 왼쪽정렬과 넓이 140설정 */
 	#menu > ul > li {
 		float:left;
 		width:140px;
-		position:relative;
+		position:sticky;
+		
+	}
+	#ma{
+	    margin-left: 275px;
 	}
 	#menu > ul > li > ul {
-		width:130px;
+		width:140px;
 		display:none;
-		position: absolute;
+		position:sticky;
 		font-size:13px;
-		background: #E5E4E2;
+		background: #fff;
+		border-style: solid;
+        border-width: 1px;
 	}
 	#menu > ul > li:hover > ul {
 		display:block;
 	}
 	#menu > ul > li > ul > li:hover {
 		background: #DCDCDC;
+		color: black;
 		}
 	</style>
 <meta charset="UTF-8">
@@ -57,7 +71,7 @@ menu박스 가운데정렬, 글자가운데 정렬 */
 <body>
 <div id="menu">
   <ul>
-    <li><a href="#">카테고리</a>
+    <li id="ma"><a href="#">카테고리</a>
       <ul>
         <li><a href="chicken">닭고기</a></li>
         <li><a href="pork">돼지고기</a></li>

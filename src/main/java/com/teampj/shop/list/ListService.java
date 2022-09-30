@@ -26,6 +26,12 @@ public interface ListService {
 
 	ArrayList<ListDTO> salad();
 
+	ArrayList<ListDTO> buy(String pcode);
+
+	void buysave(String scode, String pcode, int bb, String omethod);
+
+	
+
 	
 
 }
