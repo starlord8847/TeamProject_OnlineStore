@@ -5,22 +5,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+a {
+  color: inherit;
+  text-decoration: none;
+}
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-랭킹
+<h2>랭킹</h2>
 <hr>
-
-오늘의 전체 랭킹 순위!
-<table width = "1200">
+<table width = "800">
   <c:forEach items = "${list}" var = "aa">
   <c:set var = "i" value = "${i+1 }"/>
     <tr>
-      <a href="detail?pcode=${aa.pcode }">
-      <td>${i }<hr></td>
-      <td width="400"> ${aa.pthumbnail }<hr></td>
-      <td>${aa.pname }<hr></td></a>
+      <td width="100">${i }<hr></td>
+      <td width="400"><a href="detail?pcode=${aa.pcode }">${aa.pthumbnail }</a><hr></td>
+      <td><a href="detail?pcode=${aa.pcode }">${aa.pname }</a><hr></td>
       <td>${aa.price }<hr></td>
     </tr>  
   </c:forEach>

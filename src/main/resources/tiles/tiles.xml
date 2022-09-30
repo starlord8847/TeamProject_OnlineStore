@@ -3,7 +3,7 @@
 "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
 "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
-	<definition name="baseLayout" template="/WEB-INF/views/layout/layout.jsp">
+	<definition name="baseLayout" template="/WEB-INF/views/layout/layout2.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="navi" value="/WEB-INF/views/layout/navi.jsp" />
@@ -40,6 +40,24 @@
 	</definition>
 	<definition name="listdetail" extends="baseLayout">
 		<put-attribute name="body" value="/WEB-INF/views/list/detail.jsp" />
+	</definition>
+	<definition name="listchicken" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/chicken.jsp" />
+	</definition>
+	<definition name="listpork" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/pork.jsp" />
+	</definition>
+	<definition name="listbeef" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/beef.jsp" />
+	</definition>
+	<definition name="listdrink" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/drink.jsp" />
+	</definition>
+	<definition name="listrice" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/rice.jsp" />
+	</definition>
+	<definition name="listsalad" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/salad.jsp" />
 	</definition>
 	
 <!-- ORDER -->

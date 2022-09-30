@@ -78,6 +78,78 @@ public class ListController {
 		mav.setViewName("listsearchpage");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/chicken", method = RequestMethod.GET)
+	public ModelAndView chicken(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.chicken();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listsearchpage");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/drink", method = RequestMethod.GET)
+	public ModelAndView drink(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.drink();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listsearchpage");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/salad", method = RequestMethod.GET)
+	public ModelAndView salad(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.salad();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listsearchpage");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/pork", method = RequestMethod.GET)
+	public ModelAndView pork(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.pork();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listsearchpage");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/beef", method = RequestMethod.GET)
+	public ModelAndView beef(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.beef();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listsearchpage");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/rice", method = RequestMethod.GET)
+	public ModelAndView rice(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.rice();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listsearchpage");
+		return mav;
+	}
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public ModelAndView detail(Model model, HttpServletRequest request) {

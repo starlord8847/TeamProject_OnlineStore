@@ -16,8 +16,8 @@
 	}
 /* a태그에 텍스트 밑줄을 없애고 색상을 #333 */
 	a {
-		text-decoration: none;
-		color:#333;
+		color: inherit;
+        text-decoration: none;
 	}
 /* 글자크기를 16px 맑은 고딕 굵게하고 width넓이 700, 높이 50만큼 배경색은 #ccc, 글자색은 검정색, 라인높이50px
 menu박스 가운데정렬, 글자가운데 정렬 */
@@ -29,6 +29,7 @@ menu박스 가운데정렬, 글자가운데 정렬 */
 		line-height: 50px; 
 		margin:0 auto;
 		text-align: center;
+		position:relative;z-index:2
 	}
 /* menu태그 자식의 ul의 자식 li를 왼쪽정렬과 넓이 140설정 */
 	#menu > ul > li {
@@ -58,29 +59,12 @@ menu박스 가운데정렬, 글자가운데 정렬 */
   <ul>
     <li><a href="#">카테고리</a>
       <ul>
-        <li><a href="#">신상품</a></li>
-        <li><a href="#">선물하기</a></li>
-        <li><a href="#">1팩담기</a></li>
-        <li><a href="#">닭가슴살</a></li>
-        <li><a href="#">즉석 간편식</a></li>
-        <li><a href="#">도시락, 볶음밥</a></li>
-        <li><a href="#">소고기</a></li>
-        <li><a href="#">돼지,오리고기</a></li>
-        <li><a href="#">닭안심살</a></li>
-        <li><a href="#">샐러드, 과일</a></li>
-        <li><a href="#">베이커리, 치즈</a></li>
-        <li><a href="#">과자, 간식, 떡</a></li>
-        <li><a href="#">음료, 차, 프로틴</a></li>
-        <li><a href="#">비건식품</a></li>
-        <li><a href="#">계란, 난백, 콩</a></li>
-        <li><a href="#">견과, 고구마, 감자</a></li>
-        <li><a href="#">반찬, 밀키트, 안주</a></li>
-        <li><a href="#">건강식품</a></li>
-        <li><a href="#">수산, 해산</a></li>
-        <li><a href="#">소스, 오일</a></li>
-        <li><a href="#">식단, 패키지</a></li>
-        <li><a href="#">운동, 생활용품</a></li>
-        <li><a href="#">베이비, 키즈</a></li>
+        <li><a href="chicken">닭고기</a></li>
+        <li><a href="pork">돼지고기</a></li>
+        <li><a href="beef">소고기</a></li>
+        <li><a href="drink">드링크</a></li>
+        <li><a href="rice">도시락, 볶음밥</a></li>
+        <li><a href="salad">샐러드</a></li>
       </ul>
     </li>
       <li><a href="ranking">랭킹</a></li>

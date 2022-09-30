@@ -12,21 +12,20 @@ a {
 }
 </style>
 <meta charset="UTF-8">
-
 <title>Insert title here</title>
 </head>
 <body>
 ${svalue } 검색결과
 <hr>
-<table width = "800">
+<table width = "1200">
   <c:forEach items = "${list}" var = "aa">
-    <tr>   
+    <tr>
       <td width="400"><a href="detail?pcode=${aa.pcode }">
       <img src="${pageContext.request.contextPath }/image/${aa.pthumbnail }" width="300" height="150"/>
       </a><hr></td>
       <td><a href="detail?pcode=${aa.pcode }">${aa.pname }</a><hr></td>
-      <td>${aa.price }<hr></td>  
-    </tr>
+      <td>${aa.price }<hr></td>
+    </tr>  
   </c:forEach>
 
 </table>

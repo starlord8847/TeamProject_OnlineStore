@@ -14,6 +14,18 @@ public interface ListService {
 
 	ArrayList<ListDTO> detail(String pcode);
 
+	ArrayList<ListDTO> chicken();
+
+	ArrayList<ListDTO> pork();
+
+	ArrayList<ListDTO> beef();
+
+	ArrayList<ListDTO> rice();
+
+	ArrayList<ListDTO> drink();
+
+	ArrayList<ListDTO> salad();
+
 	
 
 }

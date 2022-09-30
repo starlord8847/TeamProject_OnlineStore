@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/WEB-INF/views/layout/CSS.jsp" %>
 </head>
 <body>
 

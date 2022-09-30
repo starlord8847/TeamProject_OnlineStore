@@ -4,23 +4,28 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style type="text/css">
-body {
+a {
+  color: inherit;
+  text-decoration: none;
+}
+html, body{
+width: 100%;
+height: 100%;
 margin: 0;
 padding: 0;
 }
-
 header {
 display: inline-block;
 }
 
 .container {
-width: 980px;
-margin: auto;
+width: 100%;
+height: 100%;
 /* header에 주지말고 그 안의 요소에 padding을 준다. */
 padding: 20px 0;
 }

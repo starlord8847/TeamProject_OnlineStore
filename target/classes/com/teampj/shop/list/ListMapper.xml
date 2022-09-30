@@ -43,7 +43,7 @@
   <select id="search" resultMap="dto">
     select *
     from listdb
-    where pname like '%' || #{param1} || '%'
+    where pname like '%' || #{param1} || '%' or ptag like '%' || #{param1} || '%'
   </select>
   
   <select id="detail" resultMap="dto">
@@ -52,17 +52,45 @@
     where pcode = #{param1}
   </select>
   
+  <select id="chicken" resultMap="dto">
+    select *
+    from listdb
+    where pmaincate = 'Chicken'
+  </select>
+  
+  <select id="pork" resultMap="dto">
+    select *
+    from listdb
+    where pmaincate = 'Pork'
+  </select>
+  
+  <select id="beef" resultMap="dto">
+    select *
+    from listdb
+    where pmaincate = 'Beef'
+  </select>
+  
+  <select id="drink" resultMap="dto">
+    select *
+    from listdb
+    where pmaincate = 'Drink'
+  </select>
+  
+  <select id="salad" resultMap="dto">
+    select *
+    from listdb
+    where pmaincate = 'Salad'
+  </select>
+  
+  <select id="rice" resultMap="dto">
+    select *
+    from listdb
+    where pmaincate = 'Rice'
+  </select>
   
   
   
  
-  
-  
-  
-  
-  
-  
-  
   
   
   
