@@ -16,9 +16,8 @@ a {
 <title>Insert title here</title>
 </head>
 <body>
-${svalue } 검색결과
 <hr>
-<table width = "1200">
+<table width = "800">
   <c:forEach items = "${list}" var = "aa">
     <tr>
       <td width="400"><a href="detail?pcode=${aa.pcode }">

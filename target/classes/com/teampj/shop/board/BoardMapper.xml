@@ -17,5 +17,29 @@
 		<result property="repstep" column="repstep"/>
 		<result property="repindent" column="repindent"/>
 	</resultMap>
-
+  
+  <select id="review" resultMap="dto">
+    select *
+    from boarddb
+    where pcode = #{param1} and btype = '2'
+  </select>
+  
+  <select id="inquiry" resultMap="dto">
+    select *
+    from boarddb
+    where pcode = #{param1} and btype = '1'
+  </select>
+  
+  <select id="cntnotice" resultType="int">
+    select count(*)
+    from boarddb
+  </select>
+  
+  <select id="selectnotice" resultMap="dto">
+    select *
+    from (select rownum rm, A.* from(select * from boarddb order by reproot desc, repstep asc)A)
+    where rm between #{start} and #{end}
+  </select>  
+  
+  
 </mapper>

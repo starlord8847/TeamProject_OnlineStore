@@ -88,6 +88,36 @@
     where pmaincate = 'Rice'
   </select>
   
+  <select id="stone" resultMap="dto">
+    select *
+    from listdb
+    where scode = 'S00004'
+  </select>
+  
+  <select id="lance" resultMap="dto">
+    select *
+    from listdb
+    where scode = 'S00001'
+  </select>
+  
+  <select id="hyojin" resultMap="dto">
+    select *
+    from listdb
+    where scode = 'S00003'
+  </select>
+  
+  <select id="minsub" resultMap="dto">
+    select *
+    from listdb
+    where scode = 'S00002'
+  </select>
+  
+  <select id="steel" resultMap="dto">
+    select *
+    from listdb
+    where scode = 'S00005'
+  </select>
+  
   <select id="buy" resultMap="dto">
     select *
     from listdb
@@ -99,7 +129,6 @@
     values('O'||LPAD(SEQ_orderDB.nextval,5,0), 'U00001', #{param1}, #{param2}, #{param3}, '서울시', #{param4})
   </insert>
   
- 
   
   
   

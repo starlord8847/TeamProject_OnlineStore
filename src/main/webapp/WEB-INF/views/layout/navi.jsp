@@ -71,7 +71,7 @@ menu박스 가운데정렬, 글자가운데 정렬 */
 <body>
 <div id="menu">
   <ul>
-    <li id="ma"><a href="#">카테고리</a>
+    <li id="ma"><a href="#">상품 카테고리</a>
       <ul>
         <li><a href="chicken">닭고기</a></li>
         <li><a href="pork">돼지고기</a></li>
@@ -81,12 +81,17 @@ menu박스 가운데정렬, 글자가운데 정렬 */
         <li><a href="salad">샐러드</a></li>
       </ul>
     </li>
-      <li><a href="ranking">랭킹</a></li>
-      <li><a href="month">이달의 특가</a></li>
+      <li id="ma"><a href="#">브랜드 카테고리</a>
+      <ul>
+        <li><a href="stone">석용정육</a></li>
+        <li><a href="lance">창용식품</a></li>
+        <li><a href="hyojin">효진샐러드</a></li>
+        <li><a href="minsub">민서븜료</a></li>
+        <li><a href="steel">철민라이스</a></li>
+      </ul>
+    </li>
+      <li id="ma"><a href="ranking">랭킹</a></li>
   </ul>
-
-
-
 </div>
 </body>
 </html>

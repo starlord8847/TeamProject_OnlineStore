@@ -14,7 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.teampj.shop.board.BoardDTO;
+import com.teampj.shop.board.BoardService;
+import com.teampj.shop.board.PageDTO;
 
 @Controller
 @RequestMapping(value="/list/**")
@@ -87,7 +92,7 @@ public class ListController {
 		
 		model.addAttribute("list", list);
 		
-		mav.setViewName("listsearchpage");
+		mav.setViewName("lists_category");
 		return mav;
 	}
 	
@@ -99,7 +104,7 @@ public class ListController {
 		
 		model.addAttribute("list", list);
 		
-		mav.setViewName("listsearchpage");
+		mav.setViewName("lists_category");
 		return mav;
 	}
 	
@@ -111,7 +116,7 @@ public class ListController {
 		
 		model.addAttribute("list", list);
 		
-		mav.setViewName("listsearchpage");
+		mav.setViewName("lists_category");
 		return mav;
 	}
 	
@@ -123,7 +128,7 @@ public class ListController {
 		
 		model.addAttribute("list", list);
 		
-		mav.setViewName("listsearchpage");
+		mav.setViewName("lists_category");
 		return mav;
 	}
 	
@@ -135,7 +140,7 @@ public class ListController {
 		
 		model.addAttribute("list", list);
 		
-		mav.setViewName("listsearchpage");
+		mav.setViewName("lists_category");
 		return mav;
 	}
 	
@@ -147,7 +152,67 @@ public class ListController {
 		
 		model.addAttribute("list", list);
 		
-		mav.setViewName("listsearchpage");
+		mav.setViewName("lists_category");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/stone", method = RequestMethod.GET)
+	public ModelAndView stone(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.stone();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listp_category");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/lance", method = RequestMethod.GET)
+	public ModelAndView lance(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.lance();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listp_category");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/hyojin", method = RequestMethod.GET)
+	public ModelAndView hyojin(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.hyojin();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listp_category");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/minsub", method = RequestMethod.GET)
+	public ModelAndView minsub(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.minsub();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listp_category");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/steel", method = RequestMethod.GET)
+	public ModelAndView steel(Model model, HttpServletRequest request) {
+			
+		ListService ls = sqlSession.getMapper(ListService.class);
+		ArrayList<ListDTO> list = ls.steel();
+		
+		model.addAttribute("list", list);
+		
+		mav.setViewName("listp_category");
 		return mav;
 	}
 
@@ -157,10 +222,15 @@ public class ListController {
 		String pcode = request.getParameter("pcode");
 		
 		ListService ls = sqlSession.getMapper(ListService.class);
+		BoardService bs = sqlSession.getMapper(BoardService.class);
+		
 		ArrayList<ListDTO> list = ls.detail(pcode);
+        ArrayList<BoardDTO> list1 = bs.review(pcode);
+        ArrayList<BoardDTO> list2 = bs.inquiry(pcode);
 		
 		model.addAttribute("list", list);
-		
+		model.addAttribute("list1", list1);
+		model.addAttribute("list2", list2);
 		mav.setViewName("listdetail");
 		return mav;
 	}
@@ -195,4 +265,43 @@ public class ListController {
 		mav.setViewName("redirect:main");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/page", method = RequestMethod.GET)
+	public String page(Model model, HttpServletRequest request, PageDTO pto,
+			@RequestParam(value="nowpage", required=false)String nowpage, 
+			@RequestParam(value="cntperpage", required=false)String cntperpage) {
+		
+		String pcode = request.getParameter("pcode");
+		
+		BoardService bs = sqlSession.getMapper(BoardService.class);
+		
+		int total = bs.cntnotice(); //전체 레코드 수
+		if(nowpage == null && cntperpage == null)
+		{
+			nowpage = "1";
+			cntperpage = "5";
+		}
+		else if(nowpage == null)
+		{
+			nowpage = "1";
+		}
+		else if(cntperpage == null)
+		{
+			cntperpage = "5";
+		}
+		
+		pto = new PageDTO(total, Integer.parseInt(nowpage), Integer.parseInt(cntperpage));
+		ArrayList<BoardDTO> list1 = bs.review(pcode);
+		ArrayList<BoardDTO> list = bs.selectnotice(pto);
+		
+		model.addAttribute("paging", pto);
+		model.addAttribute("view", list);
+		model.addAttribute("list1", list1);
+
+		
+		return "page";
+	}
+
+
+	
 }

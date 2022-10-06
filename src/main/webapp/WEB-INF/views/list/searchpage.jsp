@@ -23,12 +23,13 @@ ${svalue } 검색결과
     <tr>   
       <td width="400"><a href="detail?pcode=${aa.pcode }">
       <img src="${pageContext.request.contextPath }/image/${aa.pthumbnail }" width="300" height="150"/>
-      </a><hr></td>
-      <td><a href="detail?pcode=${aa.pcode }">${aa.pname }</a><hr></td>
-      <td>${aa.price }<hr></td>  
+      </a></td>
+      <td><a href="detail?pcode=${aa.pcode }">${aa.pname }</a></td>
+      <td>${aa.price }</td>  
     </tr>
   </c:forEach>
 
 </table>
+<hr>
 </body>
 </html>

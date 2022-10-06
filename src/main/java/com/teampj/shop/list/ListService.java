@@ -30,6 +30,16 @@ public interface ListService {
 
 	void buysave(String scode, String pcode, int bb, String omethod);
 
+	ArrayList<ListDTO> stone();
+
+	ArrayList<ListDTO> lance();
+
+	ArrayList<ListDTO> hyojin();
+
+	ArrayList<ListDTO> minsub();
+
+	ArrayList<ListDTO> steel();
+
 	
 
 	

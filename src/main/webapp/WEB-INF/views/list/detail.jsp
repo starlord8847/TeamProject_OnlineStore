@@ -65,9 +65,39 @@ a {
     <tr>
       <td colspan="2" id="td"><a href="#"><h2>장바구니</h2></a><input type="submit" value="바로구매"></td>
     </tr>    
+</table>
+</c:forEach> 
+<table border="1" width = "400">
+<caption><h2>후기글</h2></caption>&emsp;<a href="page">전체 보기</a>
+ <tr>
+  <th>제목</th><th>작성일자</th><th>내용</th>
+ </tr>
+ 
+<c:forEach items="${list1 }" var="bb">
+ <tr>
+  <td>${bb.bname }</td>
+  <td>${bb.bdate }</td>
+  <td>${bb.bcont }</td>
+ </tr>
+</c:forEach>
 
 </table>
-</c:forEach>  
+
+<table border="1" width = "400">
+<caption><h2>문의글</h2></caption>
+ <tr>
+  <th>제목</th><th>작성일자</th><th>내용</th>
+ </tr>
+ 
+<c:forEach items="${list2 }" var="cc">
+ <tr>
+  <td>${cc.bname }</td>
+  <td>${cc.bdate }</td>
+  <td>${cc.bcont }</td>
+ </tr>
+</c:forEach>
+
+</table>
 </form>
 </body>
 </html>

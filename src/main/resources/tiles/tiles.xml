@@ -41,26 +41,18 @@
 	<definition name="listdetail" extends="baseLayout">
 		<put-attribute name="body" value="/WEB-INF/views/list/detail.jsp" />
 	</definition>
-	<definition name="listchicken" extends="baseLayout">
-		<put-attribute name="body" value="/WEB-INF/views/list/chicken.jsp" />
-	</definition>
-	<definition name="listpork" extends="baseLayout">
-		<put-attribute name="body" value="/WEB-INF/views/list/pork.jsp" />
-	</definition>
-	<definition name="listbeef" extends="baseLayout">
-		<put-attribute name="body" value="/WEB-INF/views/list/beef.jsp" />
-	</definition>
-	<definition name="listdrink" extends="baseLayout">
-		<put-attribute name="body" value="/WEB-INF/views/list/drink.jsp" />
-	</definition>
-	<definition name="listrice" extends="baseLayout">
-		<put-attribute name="body" value="/WEB-INF/views/list/rice.jsp" />
-	</definition>
-	<definition name="listsalad" extends="baseLayout">
-		<put-attribute name="body" value="/WEB-INF/views/list/salad.jsp" />
-	</definition>
 	<definition name="listbuy" extends="baseLayout">
 		<put-attribute name="body" value="/WEB-INF/views/list/buy.jsp" />
+	</definition>
+	<definition name="lists_category" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/s_category.jsp" />
+	</definition>
+	<definition name="listp_category" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/p_category.jsp" />
+	</definition>
+	
+	<definition name="page" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/list/page.jsp" />
 	</definition>
 	
 <!-- ORDER -->

@@ -22,7 +22,8 @@ a {
   <c:set var = "i" value = "${i+1 }"/>
     <tr>
       <td width="100">${i }<hr></td>
-      <td width="400"><a href="detail?pcode=${aa.pcode }">${aa.pthumbnail }</a><hr></td>
+      <td width="400"><a href="detail?pcode=${aa.pcode }">
+      <img src="${pageContext.request.contextPath }/image/${aa.pthumbnail }" width="300" height="150"/></a><hr></td>
       <td><a href="detail?pcode=${aa.pcode }">${aa.pname }</a><hr></td>
       <td>${aa.price }<hr></td>
     </tr>  
