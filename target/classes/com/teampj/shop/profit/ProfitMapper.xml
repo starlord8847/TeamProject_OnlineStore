@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.teampj.shop.profit.ProfitService">
+
+	<resultMap type="com.teampj.shop.profit.ProfitDTO" id="dto">
+		<result property="ocode" column="ocode"/>
+		<result property="scode" column="scode"/>
+		<result property="pcode" column="pcode"/>
+		<result property="pname" column="pname"/>
+		<result property="oprofit" column="oprofit"/>
+		<result property="ocount" column="ocount"/>
+		<result property="odate" column="odate"/>
+	</resultMap>
+	
+	<!-- 철민 -->
+<!-- 매출 데이터 출력 -->
+<select id="getIncome" parameterType="String" resultType="com.teampj.shop.profit.ProfitDTO" >
+select * from profitdb where scode=#{param1} and odate between  #{param2} and to_date(#{param3}, 'YY/MM/DD') + 1 
+</select>
+<select id="testin" parameterType="String" resultType="com.teampj.shop.profit.ProfitDTO" >
+	select * from profitdb where scode=#{param1} and odate between  #{param2} and to_date(#{param3}, 'YY/MM/DD') + 1 
+</select>
+
+</mapper>
